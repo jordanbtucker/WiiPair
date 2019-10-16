@@ -134,7 +134,7 @@ int _tmain(int argc, _TCHAR *argv[])
         {
           _tprintf(_T("Found: %s\n"), btdi.szName);
 
-          if (!wcscmp(btdi.szName, L"Nintendo RVL-WBC-01") || !wcscmp(btdi.szName, L"Nintendo RVL-CNT-01"))
+          if (!wcscmp(btdi.szName, L"Nintendo RVL-WBC-01") || !wcscmp(btdi.szName, L"Nintendo RVL-CNT-01") || !wcscmp(btdi.szName, L"Nintendo RVL-CNT-01-TR"))
           {
             WCHAR pass[6];
             DWORD pcServices = 16;
