@@ -4,7 +4,8 @@ Easily pair a Wii Remote with a Windows PC.
 
 ## Usage
 
-- Download the latest executable from the [releases](releases) page.
+- Download the latest executable from the
+  [releases](https://github.com/jordanbtucker/WiiPair/releases) page.
 - Run WiiPair.exe.
 - Press the <kbd>1</kbd> and <kbd>2</kbd> buttons on the Wii Remote
   simultaneously.
