@@ -132,7 +132,7 @@ int _tmain(int argc, _TCHAR *argv[])
       {
         do
         {
-          _tprintf(_T("Found: %s\n"), btdi.szName);
+          _tprintf(_T("Found: %s: %s\n"), btdi.szName, FormatBTAddress(btdi.Address));
 
           if (!wcscmp(btdi.szName, L"Nintendo RVL-WBC-01") || !wcscmp(btdi.szName, L"Nintendo RVL-CNT-01") || !wcscmp(btdi.szName, L"Nintendo RVL-CNT-01-TR"))
           {
