@@ -152,12 +152,12 @@ int _tmain(int argc, _TCHAR *argv[])
             }
 
             // MAC address is passphrase
-            pass[0] = radioInfo.address.rgBytes[0];
-            pass[1] = radioInfo.address.rgBytes[1];
-            pass[2] = radioInfo.address.rgBytes[2];
-            pass[3] = radioInfo.address.rgBytes[3];
-            pass[4] = radioInfo.address.rgBytes[4];
-            pass[5] = radioInfo.address.rgBytes[5];
+            pass[0] = btdi.Address.rgBytes[0];
+            pass[1] = btdi.Address.rgBytes[1];
+            pass[2] = btdi.Address.rgBytes[2];
+            pass[3] = btdi.Address.rgBytes[3];
+            pass[4] = btdi.Address.rgBytes[4];
+            pass[5] = btdi.Address.rgBytes[5];
 
             if (!error)
             {
