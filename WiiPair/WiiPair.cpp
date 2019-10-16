@@ -1,18 +1,19 @@
-#include "stdafx.h"
+#include "pch.h"
 
 #include <windows.h>
 #include <bthsdpdef.h>
 #include <bthdef.h>
 #include <BluetoothAPIs.h>
 #include <strsafe.h>
+#include <tchar.h>
 
 #pragma comment(lib, "Bthprops.lib")
 
-DWORD ShowErrorCode(LPTSTR msg, DWORD dw)
+DWORD ShowErrorCode(const _TCHAR *msg, DWORD dw)
 {
   // Retrieve the system error message for the last-error code
 
-  LPVOID lpMsgBuf;
+  _TCHAR *lpMsgBuf;
 
   FormatMessage(
       FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS,
@@ -33,13 +34,13 @@ DWORD ShowErrorCode(LPTSTR msg, DWORD dw)
 _TCHAR *FormatBTAddress(BLUETOOTH_ADDRESS address)
 {
   static _TCHAR ret[20];
-  _stprintf(ret, _T("%02x:%02x:%02x:%02x:%02x:%02x"),
-            address.rgBytes[5],
-            address.rgBytes[4],
-            address.rgBytes[3],
-            address.rgBytes[2],
-            address.rgBytes[1],
-            address.rgBytes[0]);
+  _stprintf_s(ret, _T("%02x:%02x:%02x:%02x:%02x:%02x"),
+              address.rgBytes[5],
+              address.rgBytes[4],
+              address.rgBytes[3],
+              address.rgBytes[2],
+              address.rgBytes[1],
+              address.rgBytes[0]);
   return ret;
 }
 
@@ -161,6 +162,7 @@ int _tmain(int argc, _TCHAR *argv[])
             if (!error)
             {
               // Pair with Wii device
+              #pragma warning(disable : 4995)
               if (ShowErrorCode(_T("BluetoothAuthenticateDevice"), BluetoothAuthenticateDevice(NULL, hRadios[radio], &btdi, pass, 6)) != ERROR_SUCCESS)
                 error = TRUE;
             }
