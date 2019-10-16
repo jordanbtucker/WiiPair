@@ -206,7 +206,7 @@ int _tmain(int argc, _TCHAR *argv[])
     }
   }
 
-  _tprintf(_T("=============================================\n"), nPaired);
+  _tprintf(_T("=============================================\n"));
   _tprintf(_T("%d Wii devices paired\n"), nPaired);
 
   return 0;
